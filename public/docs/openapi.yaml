@@ -1,0 +1,690 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/admin/travels:
+    post:
+      summary: ''
+      operationId: postApiV1AdminTravels
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 99843f9a-a627-4b38-aa63-94ae9d766349
+                    name: 'Repudiandae sed.'
+                    slug: repudiandae-sed
+                    description: 'Maiores quis voluptatibus quaerat accusamus. Dolores sit aperiam qui. Natus delectus ea quia et.'
+                    number_of_days: 5
+                    number_of_nights: 4
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 99843f9a-a627-4b38-aa63-94ae9d766349
+                      name:
+                        type: string
+                        example: 'Repudiandae sed.'
+                      slug:
+                        type: string
+                        example: repudiandae-sed
+                      description:
+                        type: string
+                        example: 'Maiores quis voluptatibus quaerat accusamus. Dolores sit aperiam qui. Natus delectus ea quia et.'
+                      number_of_days:
+                        type: integer
+                        example: 5
+                      number_of_nights:
+                        type: integer
+                        example: 4
+      tags:
+        - 'Admin Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_public:
+                  type: boolean
+                  description: ''
+                  example: false
+                name:
+                  type: string
+                  description: ''
+                  example: harum
+                description:
+                  type: string
+                  description: ''
+                  example: autem
+                number_of_days:
+                  type: integer
+                  description: ''
+                  example: 5
+              required:
+                - name
+                - description
+                - number_of_days
+  '/api/v1/admin/travels/{travel_id}/tours':
+    post:
+      summary: ''
+      operationId: postApiV1AdminTravelsTravel_idTours
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    name: 'Est officia.'
+                    starting_date: '2023-06-28T00:00:00.000000Z'
+                    ending_date: '2023-07-07T00:00:00.000000Z'
+                    price: '459.99'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: null
+                      name:
+                        type: string
+                        example: 'Est officia.'
+                      starting_date:
+                        type: string
+                        example: '2023-06-28T00:00:00.000000Z'
+                      ending_date:
+                        type: string
+                        example: '2023-07-07T00:00:00.000000Z'
+                      price:
+                        type: string
+                        example: '459.99'
+      tags:
+        - 'Admin Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: eligendi
+                starting_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-06-28T06:13:39'
+                ending_date:
+                  type: string
+                  description: 'Must be a valid date. Must be a date after <code>starting_date</code>.'
+                  example: '2123-04-29'
+                price:
+                  type: number
+                  description: ''
+                  example: 48854.4574319
+              required:
+                - name
+                - starting_date
+                - ending_date
+                - price
+    parameters:
+      -
+        in: path
+        name: travel_id
+        description: 'The ID of the travel.'
+        example: 99842048-705e-496f-a3ee-0843d94822a7
+        required: true
+        schema:
+          type: string
+  '/api/v1/admin/travels/{travel_id}':
+    put:
+      summary: ''
+      operationId: putApiV1AdminTravelsTravel_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 99843f9c-270c-4963-ba10-edc097469bd0
+                    name: 'Laudantium neque.'
+                    slug: laudantium-neque
+                    description: 'Dolorem aut eaque est assumenda. Rerum error ut aut et culpa vero. Voluptatem assumenda ratione a.'
+                    number_of_days: 5
+                    number_of_nights: 4
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: 99843f9c-270c-4963-ba10-edc097469bd0
+                      name:
+                        type: string
+                        example: 'Laudantium neque.'
+                      slug:
+                        type: string
+                        example: laudantium-neque
+                      description:
+                        type: string
+                        example: 'Dolorem aut eaque est assumenda. Rerum error ut aut et culpa vero. Voluptatem assumenda ratione a.'
+                      number_of_days:
+                        type: integer
+                        example: 5
+                      number_of_nights:
+                        type: integer
+                        example: 4
+      tags:
+        - 'Admin Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                is_public:
+                  type: boolean
+                  description: ''
+                  example: true
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+                description:
+                  type: string
+                  description: ''
+                  example: minima
+                number_of_days:
+                  type: integer
+                  description: ''
+                  example: 7
+              required:
+                - name
+                - description
+                - number_of_days
+    parameters:
+      -
+        in: path
+        name: travel_id
+        description: 'The ID of the travel.'
+        example: 99842048-705e-496f-a3ee-0843d94822a7
+        required: true
+        schema:
+          type: string
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  access_token: 'access token...'
+                properties:
+                  access_token:
+                    type: string
+                    example: 'access token...'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: wiza.geovany@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: 'DZ\sD~fgq''~Mv'
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/travels:
+    get:
+      summary: ''
+      operationId: getApiV1Travels
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 99842048-705e-496f-a3ee-0843d94822a7
+                      name: Voluptatum
+                      slug: voluptatum
+                      description: qui
+                      number_of_days: 4
+                      number_of_nights: 3
+                  links:
+                    first: 'http://localhost:8000/api/v1/travels?page=1'
+                    last: 'http://localhost:8000/api/v1/travels?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/travels?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost:8000/api/v1/travels'
+                    per_page: 15
+                    to: 1
+                    total: 1
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 99842048-705e-496f-a3ee-0843d94822a7
+                        name: Voluptatum
+                        slug: voluptatum
+                        description: qui
+                        number_of_days: 4
+                        number_of_nights: 3
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 99842048-705e-496f-a3ee-0843d94822a7
+                        name:
+                          type: string
+                          example: Voluptatum
+                        slug:
+                          type: string
+                          example: voluptatum
+                        description:
+                          type: string
+                          example: qui
+                        number_of_days:
+                          type: integer
+                          example: 4
+                        number_of_nights:
+                          type: integer
+                          example: 3
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/travels?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/travels?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost:8000/api/v1/travels?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost:8000/api/v1/travels'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 1
+                      total:
+                        type: integer
+                        example: 1
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/travels/{travel_slug}/tours':
+    get:
+      summary: ''
+      operationId: getApiV1TravelsTravel_slugTours
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      name: 'Dolorum commodi.'
+                      starting_date: '2023-06-28T00:00:00.000000Z'
+                      ending_date: '2023-07-07T00:00:00.000000Z'
+                      price: '72.81'
+                    -
+                      id: null
+                      name: Consequatur.
+                      starting_date: '2023-06-28T00:00:00.000000Z'
+                      ending_date: '2023-06-30T00:00:00.000000Z'
+                      price: '576.78'
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: 15
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        name: 'Dolorum commodi.'
+                        starting_date: '2023-06-28T00:00:00.000000Z'
+                        ending_date: '2023-07-07T00:00:00.000000Z'
+                        price: '72.81'
+                      -
+                        id: null
+                        name: Consequatur.
+                        starting_date: '2023-06-28T00:00:00.000000Z'
+                        ending_date: '2023-06-30T00:00:00.000000Z'
+                        price: '576.78'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: null
+                        name:
+                          type: string
+                          example: 'Dolorum commodi.'
+                        starting_date:
+                          type: string
+                          example: '2023-06-28T00:00:00.000000Z'
+                        ending_date:
+                          type: string
+                          example: '2023-07-07T00:00:00.000000Z'
+                        price:
+                          type: string
+                          example: '72.81'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: '/?page=1'
+                      last:
+                        type: string
+                        example: '/?page=1'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: null
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 1
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: '/?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: null
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: /
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 2
+                      total:
+                        type: integer
+                        example: 2
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                priceFrom:
+                  type: number
+                  description: ''
+                  example: 3.855004
+                priceTo:
+                  type: number
+                  description: ''
+                  example: 0.2321614
+                dateFrom:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-06-28T06:13:38'
+                dateTo:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-06-28T06:13:38'
+                sortBy:
+                  type: string
+                  description: 'Must be one of <code>price</code>.'
+                  example: price
+                sortOrder:
+                  type: string
+                  description: 'Must be one of <code>asc</code> or <code>desc</code>.'
+                  example: asc
+      security: []
+    parameters:
+      -
+        in: path
+        name: travel_slug
+        description: 'The slug of the travel.'
+        example: 99842048-705e-496f-a3ee-0843d94822a7
+        required: true
+        schema:
+          type: string
+  /api/v1/user:
+    get:
+      summary: ''
+      operationId: getApiV1User
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+tags:
+  -
+    name: 'Admin Endpoints'
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []
